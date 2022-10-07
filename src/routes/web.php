@@ -13,6 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ADRの場合、__invoke()を呼び出すので、メソッドの指定は不要になる
+Route::get('/sample', \App\Http\Actions\SampleIndexAction::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
