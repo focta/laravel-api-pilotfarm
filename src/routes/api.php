@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// ADRのルーティング
+// 指定したクラスの __invoke() が呼び出されるためメソッドの指定が不要になる
+Route::get('/sample/json', \App\Http\Actions\SampleJsonAction::class);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });

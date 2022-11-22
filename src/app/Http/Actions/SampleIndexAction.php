@@ -7,9 +7,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-use App\Domain\SampleIndexDomain AS Domain;
+use App\Domain\SampleIndexDomain as Domain;
 
-use App\Http\Responders\SampleIndexResponder AS Responder;
+use App\Http\Responders\SampleIndexResponder as Responder;
 
 class SampleIndexAction extends Controller
 {
@@ -17,12 +17,12 @@ class SampleIndexAction extends Controller
     protected $Responder;
 
     public function __construct(
-        Domain $Domain,
+        Domain    $Domain,
         Responder $Responder
     )
     {
-        $this->Domain     = $Domain;
-        $this->Responder  = $Responder;
+        $this->Domain = $Domain;
+        $this->Responder = $Responder;
     }
 
     /**
