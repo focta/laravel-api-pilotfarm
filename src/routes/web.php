@@ -13,9 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// ADRの場合、__invoke()を呼び出すので、メソッドの指定は不要になる
-Route::get('/sample', \App\Http\Actions\SampleIndexAction::class);
-
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+
+require __DIR__.'/auth.php';
